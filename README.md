@@ -66,8 +66,16 @@ terraform apply --auto-approve
 terraform output
 ```
 2. SSH into frontend public instance:
+  - output private key
 ```bash
-ssh -i <forntend_private_key.pem> ubuntu@<frontend_public_ip>
+  terraform output -raw frontend_private_key > frontend-private-key01.pem 
+  chmod 400 frontend-private-key01.pem
+  terraform output -raw backend_private_key > backend-private-key01.pem
+  cumod 400 backend-private-key01.pem
+```
+  - Access to Public EC2 instance
+```bash
+  ssh -i <forntend_private_key.pem> ubuntu@<frontend_public_ip>
 ```
 3. Test connectivity
     - IMCP test frontend to backend 
