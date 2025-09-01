@@ -4,7 +4,7 @@
 variable "friendly_name_prefix" {
   type        = string
   description = "Friendly name prefix used for tagging and naming AWS resources."
-  default     = "ace"
+  default     = "hc"
 }
 
 variable "common_tags" {
@@ -32,74 +32,6 @@ variable "public_cidr" {
   description = "Any Network"
   default     = "0.0.0.0/0"
 }
-
-# variable "public_subnets" {
-#   type = map(object({
-#     cidr_block        = string
-#     availability_zone = string
-#   }))
-#   description = "Map of subnet configuration"
-#   default = {
-#     "frontend_publicSubnet_1" = {
-#       cidr_block        = "10.0.1.0/24"
-#       availability_zone = "ap-southeast-1a"
-#     },
-#     "frontend_publicSubnet_2" = {
-#       cidr_block        = "10.0.2.0/24"
-#       availability_zone = "ap-southeast-1b"
-#     },
-#     "frontend_publicSubnet_3" = {
-#       cidr_block        = "10.0.3.0/24"
-#       availability_zone = "ap-southeast-1c"
-#     },
-#     "backend_publicSubnet_1" = {
-#       cidr_block        = "192.168.1.0/24"
-#       availability_zone = "ap-southeast-1a"
-#     },
-#     "backend_publicSubnet_2" = {
-#       cidr_block        = "192.168.2.0/24"
-#       availability_zone = "ap-southeast-1b"
-#     },
-#     "backend_publicSubnet_3" = {
-#       cidr_block        = "192.168.3.0/24"
-#       availability_zone = "ap-southeast-1c"
-#     },
-#   }
-# }
-
-# variable "private_subnets" {
-#   type = map(object({
-#     cidr_block        = string
-#     availability_zone = string
-#   }))
-#   description = "Map of subnet configuration"
-#   default = {
-#     "frontend_privateSubnet_1" = {
-#       cidr_block        = "10.0.253.0/24"
-#       availability_zone = "ap-southeast-1a"
-#     },
-#     "frontend_privateSubnet_2" = {
-#       cidr_block        = "10.0.254.0/24"
-#       availability_zone = "ap-southeast-1b"
-#     },
-#     "frontend_privateSubnet_3" = {
-#       cidr_block        = "10.0.255.0/24"
-#       availability_zone = "ap-southeast-1c"
-#     },
-#     "backend_privateSubnet_1" = {
-#       cidr_block        = "192.168.253.0/24"
-#       availability_zone = "ap-southeast-1a"
-#     },
-#     "backend_privateSubnet_2" = {
-#       cidr_block        = "192.168.254.0/24"
-#       availability_zone = "ap-southeast-1b"
-#     },
-#     "backend_privateSubnet_3" = {
-#       cidr_block        = "192.168.254.0/24"
-#       availability_zone = "ap-southeast-1c"
-#     }
-#   }
-# }
 
 variable "gateway_id" {
   type        = string
