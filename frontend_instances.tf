@@ -1,6 +1,6 @@
 # #Create EC2 Instances for Bastion host
 resource "aws_instance" "frontend_public_host" {
-  ami             = data.aws_ami.ubuntu.id
+  ami             = data.aws_ami.public_instance.id
   subnet_id       = aws_subnet.frontend_public["frontend_publicSubnet_1"].id
   instance_type   = var.public_instance
   security_groups = [aws_security_group.frontend_pub1_sg.id]

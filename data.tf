@@ -1,19 +1,19 @@
-# Create data block for bastion host
-# data "aws_ami" "bastion" {
-#   most_recent = true
+#Create data block for bastion host
+data "aws_ami" "public_instance" {
+  most_recent = true
 
-#   filter {
-#     name   = "name"
-#     values = ["amzn2-ami-kernel-5.10-hvm-*-x86_64-gp2"]
-#   }
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-kernel-5.10-hvm-*-x86_64-gp2"]
+  }
 
-#   filter {
-#     name   = "virtualization-type"
-#     values = ["hvm"]
-#   }
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
 
-#   owners = ["137112412989"] # Amazon
-#}
+  owners = ["137112412989"] # Amazon
+}
 
 # Create data block for k8s nodes
 data "aws_ami" "ubuntu" {
